@@ -31,25 +31,26 @@ $(function() {
 
 	 var window_recall = //html
 	`<form id="window">
-		<label for="name" class="window__label">Имя:</label>
-		<input type="text" class="window__input" name="name" id="name" placeholder="Имя">
-		<label for="phone" class="window__label">Телефон:</label>
-		<input type="phone" class="window__input" name="phone" id="phone" placeholder="+7 (999) 999-99-99">
+		<input type="text" class="window__input" name="name" id="name" placeholder="Ваше имя*" required>
+		<input type="phone" class="window__input" name="phone" id="phone" placeholder="Ваш номер*" required>
+		<textarea class="window__textarea" name="message" placeholder="Комментарий к заказу"></textarea>
 		<button class="window__button" type="submit">Отправить</button>
 	</form>`;
 
     var window_buy = //html
 	`<form id="window">
-		<label for="name" class="window__label">Имя:</label>
-		<input type="text" class="window__input" name="name" id="name" placeholder="Имя">
-		<label for="phone" class="window__label">Телефон:</label>
-		<input type="phone" class="window__input" name="phone" id="phone" placeholder="+7 (999) 999-99-99">
-		<label for="email" class="window__label">Почта:</label>
-		<input type="email" class="window__input" name="email" id="email" placeholder="mail@gmail.com">
+		<input type="text" class="window__input" name="name" id="name" placeholder="Ваше имя*" required>
+		<input type="phone" class="window__input" name="phone" id="phone" placeholder="Ваш номер*" required>
+		<input type="email" class="window__input" name="email" id="email" placeholder="Ваш Email*" required>
+		<textarea class="window__textarea" name="message" placeholder="Комментарий к заказу"></textarea>
 		<button class="window__button" type="submit">Отправить</button>
 	</form>`;
 
     $(".request-call").click(function(){
+        $("#popup-container").html(window_recall).fadeIn();
+    });
+
+    $(".call-answer").click(function(){
         $("#popup-container").html(window_recall).fadeIn();
     });
 
